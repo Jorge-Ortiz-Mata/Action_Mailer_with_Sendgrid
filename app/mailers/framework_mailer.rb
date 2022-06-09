@@ -5,6 +5,6 @@ class FrameworkMailer < ApplicationMailer
         @user = params[:user]
         @url = 'http://localhost:3000/'
         @framework = params[:framework]
-        mail(to: @user, subject: 'New Framework')
+        mail(to: @user, subject: 'Framework')
     end
 end
