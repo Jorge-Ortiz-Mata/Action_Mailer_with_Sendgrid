@@ -7,6 +7,7 @@ class FrameworksController < ApplicationController
     @framework.user_id = current_user.id
     
     if @framework.save
+      FrameworkMailer.with(user: current_user.email, framework: @framework).welcome_email.deliver_later
       redirect_to root_path, notice: "Framework successfully created."
     end
   end
